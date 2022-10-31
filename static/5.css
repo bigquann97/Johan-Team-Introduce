@@ -12,12 +12,15 @@
 }
 
 .mypic {
-    width: 500px;
-    height: 500px;
-
-    background-image: url('../static/20200416_192528.jpg');
+    background-size: 300px;
+    width: 300px;
+    height: 300px;
+    background-image: url('../static/5.png');
     background-position: center 20%;
     background-size: cover;
+
+    color: #ffffff;
+
 
     display: flex;
     flex-direction: column;
@@ -27,9 +30,10 @@
     margin: auto;
 }
 
+
 .mypost {
-    width: 95%;
-    max-width: 500px;
+    width: 60%;
+    max-width: 380px;
     margin: 20px auto 20px auto;
 
     box-shadow: 0px 0px 3px 0px black;
@@ -40,10 +44,12 @@
     margin-top: 15px;
 }
 
-.mycards {
+.mycomments {
+    text-align: center;
     width: 95%;
-    max-width: 500px;
+    max-width: 380px;
     margin: auto;
+    margin-bottom: 30px;
 }
 
 .mycards > .card {
@@ -62,15 +68,41 @@
 }
 
 .me {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.hr {
-    width: 50px;
-    height: 50px;
-    color: red;
-    border: 0;
+.str {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.colab {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.velog {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+hr{
+    margin-left: 10%;
+    width : 20%;
+    margin-top : 30px;
+    border : solid black 2px;
+    margin-bottom: 5px;
 }
