@@ -21,7 +21,6 @@
 
     color: #ffffff;
 
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +29,23 @@
     margin: auto;
 }
 
+.me, .str, .colab, .velog {
+    text-align: center;
+}
+
+.cheer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cheer > button {
+    margin-bottom: 10px;
+}
 
 .mypost {
     width: 60%;
@@ -55,48 +71,6 @@
 .mycomments > .card {
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-.cheer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.me {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.str {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.colab {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.velog {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 hr{
