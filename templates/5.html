@@ -16,13 +16,65 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script type="javascript" src="../static/5.js"></script>
 
     <script>
-    function cheer() {
-	    console.log('asdf');
-	    alert('응원해주셔서 감사합니다!');
-    }
+        $(document).ready(function(){
+          listing();
+        });
+
+        function listing() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/gwanho-all',
+                    data: {},
+                    success: function (response) {
+                        let gwanho = response['gwanho']
+                        let count = gwanho[0]['count']
+                        for(let i = 1; i < gwanho.length; i++) {
+                            let name = gwanho[i]['name']
+                            let comment = gwanho[i]['comment']
+                            let temp_html = `<div class="card">
+                                                <div class="card-body">
+                                                    <blockquote class="blockquote mb-0">
+                                                        <p>${comment}</p>
+                                                        <footer class="blockquote-footer">${name}</footer>
+                                                    </blockquote>
+                                                </div>
+                                            </div>`
+                            console.log(temp_html)
+                            $('#comment-list').append(temp_html)
+                        }
+                        $('#count').text(count)
+                    }
+                })
+            }
+
+        function cheer() {
+            $.ajax({
+                type: 'POST',
+                url: '/gwanho-cheer',
+                data: {},
+                success: function (response) {
+                    window.location.reload()
+                }
+            });
+            alert('응원해주셔서 감사합니다!');
+        }
+
+        function save_comment() {
+            let name = $('#name').val()
+            let comment = $('#comment').val()
+            $.ajax({
+                type: 'POST',
+                url: '/gwanho',
+                data: { name_give:name, comment_give: comment },
+                success: function (response) {
+                    alert('댓글을 남겨주셔서 감사합니다!')
+                    window.location.reload()
+                }
+        });
+        }
+
     </script>
     <title>김관호</title>
 </head>
@@ -75,7 +127,7 @@
 
     <div class="cheer">
         <button type="button" class="btn btn-success" onclick=cheer()>저를 응원해주세요!</button>
-        <h5><b>응원 받은 횟수: <span>0</span> 회</b></h5>
+        <h5><b>응원 받은 횟수: <span id="count">0</span> 회</b></h5>
     </div>
     <hr>
 
@@ -87,9 +139,9 @@
         <div class="form-floating">
             <textarea class="form-control" placeholder=" " id="comment"
                 style="height: 100px"></textarea>
-            <label for="floatingTextarea2">응원댓글</label>
+            <label for="floatingTextarea2">내용</label>
         </div>
-        <button onclick="save_comment()" type="button" class="btn btn-dark">응원 남기기</button>
+        <button onclick="save_comment()" type="button" class="btn btn-dark">댓글 남기기</button>
     </div>
 
     <div class="mycomments" id="comment-list">
@@ -117,3 +169,20 @@
             </div>
         </div>
 -->
+
+
+<!--
+gwanho
+{
+    'count': 0
+    'comments' : [
+                    {
+                        'name': "호빵맨",
+                        'comment': "안녕하세요"
+                    } ,
+                    {
+                        'name': "호빵맨",
+                        'comment': "안녕하세요"
+                    }
+                 ]
+}-->
