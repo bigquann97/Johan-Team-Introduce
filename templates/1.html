@@ -2,9 +2,252 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>한병두 : "팀 장 등 장"</title>
 </head>
-<body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap');
 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #222327;
+        z-index: 10;
+    }
+
+    .navigation {
+        position: relative;
+        width: 600px;
+        height: 70px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin: 30px auto;
+        padding: auto;
+    }
+
+    .navigation ul {
+        display: flex;
+        width: 500px;
+        padding: auto;
+    }
+
+    .navigation ul li {
+        position: relative;
+        list-style: none;
+        width: 70px;
+        height: 70px;
+        z-index: 1;
+    }
+
+    .navigation ul li a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 75px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .navigation ul li a .icon {
+        position: relative;
+        display: block;
+        line-height: 75px;
+        font-size: 1.5em;
+        text-align: center;
+        transition: 0.5s;
+        color: #222327;
+    }
+
+    .navigation ul li:hover a .icon {
+        transform: translateX(-35px);
+    }
+
+    .navigation ul li a .text {
+        position: absolute;
+        color: #222327;
+        font-weight: 400;
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        tranform: translateY(20px);
+    }
+
+    .navigation ul li:hover a .text {
+        opacity: 1;
+        transform: translate(10px, -10px);
+
+    }
+
+    .navigation ul li a .text2 {
+        position: absolute;
+        color: #222327;
+        font-weight: 400;
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        tranform: translateY(20px);
+    }
+
+    .navigation ul li:hover a .text2 {
+        opacity: 1;
+        transform: translate(10px, 10px);
+
+    }
+
+    .navigation ul li a .text3 {
+        position: absolute;
+        color: #222327;
+        font-weight: 400;
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        tranform: translateY(20px);
+    }
+
+    .navigation ul li:hover a .text3 {
+        opacity: 1;
+        transform: translate(10px, 15px);
+
+    }
+
+    .navigation ul li a .blogtext {
+        position: absolute;
+        color: #222327;
+        font-weight: 400;
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        tranform: translateY(20px);
+    }
+
+    .navigation ul li:hover a .blogtext {
+        opacity: 1;
+        transform: translate(10px, -20px);
+
+    }
+
+    .mypic {
+        width: 500px;
+        height: 500px;
+        margin: 30px auto 30px auto;
+        border-radius: 30%;
+        border: 1rem solid grey;
+        box-shadow: #485F6E;
+    }
+
+    .me {
+        width: 200px;
+        height: 50px;
+        background-color: green;
+        margin: auto;
+        padding: 10px;
+
+        display: flex;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    .myimg{
+        width:100%;
+        height:135%;
+        margin:-100px auto;
+        z-index:-20;
+    }
+
+</style>
+<body>
+<div class="navigation">
+    <ul>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                </span>
+                <span class="text">Name</span>
+                <span class="text2">한병두</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="help-outline"></ion-icon>
+                </span>
+                <span class="text">Age</span>
+                <span class="text2">29</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+                    <ion-icon name="bulb-outline"></ion-icon>
+                </span>
+                <span class="text">MBTI</span>
+                <span class="text2">ENFJ</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon">
+<ion-icon name="construct-outline"></ion-icon>
+                </span>
+                <span class="blogtext">Cowork Type</span>
+                <span class="text3">"오히려 좋아"</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="https://velog.io/@quden04" , target="_blank">
+                <span class="icon">
+<ion-icon name="book-outline"></ion-icon>
+                </span>
+                <span class="blogtext">Blog</span>
+                <span class="text2">Click to Velog</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="https://github.com/ByeongDoo-Han" , target="_blank">
+                <span class="icon">
+<ion-icon name="logo-github"></ion-icon>
+                </span>
+                <span class="blogtext">Github</span>
+                <span class="text2">Click to Github</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="https://www.instagram.com/apoti._.apito/" , target="_blank">
+                <span class="icon">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </span>
+                <span class="blogtext">Instagram</span>
+                <span class="text2">Click to Instagram</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="mypic">
+</div>
+<div >
+    <img class="myimg" src="./1/KakaoTalk_Photo_2022-11-01-00-07-08.jpg">
+</div>
+<div class="me">"퇴사해서 해맑은 나..!"</div>
 </body>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </html>
