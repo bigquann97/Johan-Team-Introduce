@@ -104,6 +104,7 @@ def ikhyeon_post():
 @app.route("/ikhyeon", methods=["GET"])
 def ikhyeon_get():
     ikhyeon_list = list(db.ikhyeon.find({}, {'_id': False}))
+    print(ikhyeon_list)
     return jsonify({'ikhyeon':ikhyeon_list})
 
 '''
