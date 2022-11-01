@@ -24,12 +24,6 @@
             width: 95%;
             max-width: 500px;
             margin: 20px auto 20px auto;
-
-
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: left;
             
         }
 
@@ -65,18 +59,62 @@
             
             box-shadow: 0px 0px 3px 0px black;
             padding: 20px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: left;
-
-            
         }
         
         .link{
             flex:left;
         }
+        .menubar{
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 20px auto;
+            
+        }
+        .menubarlist{
+            list-style-type: none;
+        }
+        .menubarlist > li {
+            width: 15%;
+            max-width: 500px;
+            margin: 20px auto 20px auto;
+            text-decoration: none;
+            float: left;
+        }
+
+        .menubarlist > li a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .menubarlist > li a:hover {
+            color: cornflowerblue;
+            text-decoration: none;
+        }
+
+
+        .header_hr {
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 20px auto;
+        }
+        .header_hr_bottom {
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 20px auto;
+            border: solid silver 1px;
+        }
+        .header_top{
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 20px auto;
+        }
+        .header_bootom{
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 20px auto;
+        }
+
 
     </style>
     <script>
@@ -135,6 +173,22 @@
     </script>
 </head>
 <body>
+
+    <div class = "header_top">
+        <hr class="header_hr">
+    </div>
+    
+    <div class = "menubar">
+        <ul class="menubarlist">
+            <li><a href="/">팀 소개</a></li>
+            <li><a href="/teaminto">팀원 소개</a></li>
+        </ul>
+    </div>
+    
+    
+    <div class = "header_bootom">
+        <hr class="header_hr_bottom">
+    </div>
 
     <div class="mypic">
         <img src="../static/profile_5.jpeg" alt="My Image">
