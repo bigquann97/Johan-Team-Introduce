@@ -13,7 +13,7 @@ def home():
 def team():
     return render_template('teaminto.html')
 
-@app.route('/bung')
+@app.route('/byeongdoo')
 def byeongdoo():
     return render_template('1.html')
 
@@ -90,6 +90,20 @@ def sein_get():
     find = list(db.sein.find({}, {'_id': False}))
     return jsonify({'sein': find})
 
+@app.route("/byeongdoo", methods=["POST"])
+def byeongdoo_comment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
+    doc = {
+        'name': name_receive,
+        'comment': comment_receive,
+    }
+    db.sein.insert_one(doc)
+    return jsonify({'msg': '댓글 작성 완료!'})
+@app.route("/byeongdoo-api", methods=["GET"])
+def byeongdoo_get():
+    find = list(db.sein.find({}, {'_id': False}))
+    return jsonify({'byeongdoo': find})
 
 '''
 @app.route("/gwanho-cheer", methods=["POST"])
