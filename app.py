@@ -14,7 +14,7 @@ def team():
     return render_template('teaminto.html')
 
 @app.route('/bung')
-def byungdoo():
+def byeongdoo():
     return render_template('1.html')
 
 @app.route('/ikhyeon')
