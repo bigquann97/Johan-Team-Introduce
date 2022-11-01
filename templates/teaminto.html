@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>김조한 팀원 소개</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+       * {
+        font-family: 'Noto Serif KR', serif;
+    }
+
+    .header-kim {
+        width: 80%;
+        height: 250px;
+
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/kim.jpg');
+        background-position: center 30%;
+        background-size: cover;
+        margin: auto;
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-kim > h2 {
+        text-align: right;
+        margin-left: 700px;
+        margin-top: 50px;
+    }
+
+    .header_hr {
+        margin-left: 10%;
+        width: 80%;
+        border: solid silver 1px;
+    }
+
+    .header_hr_bottom {
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 55px;
+        border: solid silver 1px;
+    }
+
+    .menubar {
+        list-style-type: none;
+        margin-left: 80px;
+    }
+
+    .menubar > li {
+        float: left;
+        margin-left: 60px;
+        text-decoration: none;
+    }
+
+    .menubar > li a {
+        color: black;
+        text-decoration: none;
+        text-align: left;
+    }
+
+    .menubar > li a:hover {
+        color: cornflowerblue;
+        text-decoration: none;
+    }
+    .center {
+        width: 80%;
+        height: 800px;
+        margin: auto;
+    }
+
+    .bottom > hr {
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 30px;
+        border: solid silver 1px;
+        margin-bottom: 10px;
+    }
+
+    .bottom > p {
+        margin-left: 70%;
+        margin-bottom: 30px;
+        font-size: 10px;
+    }
+    .center_wrap{
+        /*border : 1px solid red;*/
+        margin: 50px auto auto auto;
+        width: 90%;
+        height : 800px;
+    }
+    .team_per{
+        /*border : 1px solid red;*/
+        width : 329px;
+        height : 450px;
+        float: left;
+        margin: auto;
+    }
+    .team_per > a{
+        text-decoration: none;
+        color : black;
+    }
+    .team_img{
+        /*border : 1px solid black;*/
+        width : 329px;
+        height : 300px;
+        float: left;
+        margin: auto;
+    }
+    .team_img > img {
+        width : 250px;
+        height : 300px;
+        float: left;
+        margin-left: 40px;
+        border-radius: 10px;
+    }
+
+    .team_intro{
+        /*border : 1px solid blue;*/
+        width : 329px;
+        height : 100px;
+        float: left;
+        margin: auto;
+    }
+    .team_intro > p{
+        text-align: center;
+        margin-top : 30px;
+    }
+    .team_intro > p:hover{
+        text-align: center;
+        margin-top : 30px;
+        color : cornflowerblue;
+    }
+    </style>
+</head>
+<body>
+<div class="header-kim">
+    <h2>코딩 잘하는 김.조.한</h2>
+</div>
+<div>
+    <hr class="header_hr">
+    <ul class="menubar">
+        <li><a href="index.html">팀 소개</a></li>
+        <li><a href="teaminto.html">팀원 소개</a></li>
+    </ul>
+    <hr class="header_hr_bottom">
+</div>
+<div class="center">
+    <div class="center_wrap">
+        <div class="team_per">
+            <a href="1.html">
+                <div class="team_img">
+                   <img class="myimg" src="./1/KakaoTalk_Photo_2022-11-01-00-07-08.jpg">
+                </div>
+                <div class="team_intro">
+                    <p>👨‍안녕하세요, 팀장 한병두 입니다💻</p>
+                </div>
+            </a>
+        </div>
+        <div class="team_per">
+            <a href="2.html">
+                <div class="team_img">
+                     <img style="border : none;"
+                          src="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory2.daumcdn.net%2Ftistory%2F5553532%2Fattach%2F0ecda08acbea480bab92d5deb0d359b2" class="img-thumbnail" alt="...">
+                </div>
+                <div class="team_intro">
+                    <p>👨안녕하세요, 김익현 입니다💻</p>
+                </div>
+            </a>
+        </div>
+        <div class="team_per">
+            <a href="3.html">
+                <div class="team_img">
+                    <img src="../static/sein2.jpg">
+                </div>
+                <div class="team_intro">
+                    <p>👩‍안녕하세요, 한세인 입니다💻</p>
+                </div>
+            </a>
+        </div>
+        <div class="team_per">
+            <a href="4.html">
+                <div class="team_img">
+                    <img src="https://sju3358.github.io/profile_5.jpeg">
+                </div>
+                <div class="team_intro">
+                    <p>👨안녕하세요, 조성락 입니다💻</p>
+                </div>
+            </a>
+        </div>
+        <div class="team_per">
+            <a href="5.html">
+                <div class="team_img">
+                    <img src="https://ca.slack-edge.com/T043597JK8V-U046311DAP5-96dacddb167d-512">
+                </div>
+                <div class="team_intro">
+                    <p>👨안녕하세요, 김관호 입니다💻</p>
+                </div>
+            </a>
+        </div>
+        <div class="team_per">
+            <a href="index.html">
+                <div class="team_img">
+                    <img src="../static/kimjohan.jpg">
+                </div>
+                <div class="team_intro">
+                    <p>👨안녕하세요, 김조한 입니다🎤</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="bottom">
+    <hr>
+    <p>copyrightⓒ2022 코딩잘하는 김조한 all rights reserved.</p>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -35,10 +35,10 @@
             align-items: center;
             justify-content: center;
     }
-    .header-kim > h2{
-        margin-left: 850px;
-        margin-top : 50px;
+    .header-kim > h2 {
         text-align: right;
+        margin-left: 700px;
+        margin-top: 50px;
     }
     .header_hr{
         margin-left: 10%;
@@ -70,8 +70,7 @@
     }
     .center{
         width: 80%;
-        height: 800px;
-        border : 1px solid black;
+        height: 1300px;
         margin : auto;
     }
     .bottom > hr{
@@ -86,6 +85,26 @@
         margin-bottom: 30px;
         font-size: 10px;
     }
+    .kim_img{
+        margin-left: 350px;
+        margin-top : 50px;
+        width : 550px;
+    }
+    .kim_img > img{
+        border-radius: 5px;
+        margin-left: 30px;
+    }
+    .intro > p{
+        font-weight: bolder;
+        font-size: 30px;
+        width: 540px;
+        text-align: center;
+        margin : 30px auto auto 350px;
+    }
+    .name > b{
+        font-size: 30px;
+        color : cornflowerblue;
+    }
 </style>
 </head>
 <body>
@@ -95,13 +114,26 @@
     <div>
         <hr class="header_hr">
         <ul class="menubar">
-            <li><a href="#">팀 소개</a></li>
-            <li><a href="#">팀원 소개</a></li>
+            <li><a href="index.html">팀 소개</a></li>
+            <li><a href="teaminto.html">팀원 소개</a></li>
         </ul>
         <hr class="header_hr_bottom">
     </div>
     <div class="center">
-        여기에 내용 삽입
+        <div class="kim_img">
+            <img src="../static/kimjohan.jpg" alt="김조한" title="김조한">
+        </div>
+        <div class="intro">
+            <p>안녕하세요, 코딩 잘하는 김.조.한 입니다</p>
+            <p style="margin-top : 50px">저희 팀은 👀 </p>
+            <p class="name" style="font-size: 20px;">
+                <b>김</b>관호, <b>김</b>익현, <b>조</b>성락, <b>한</b>병두, <b>한</b>세인 =
+                <b>김. 조. 한</b>
+            </p>
+            <p style="font-size: 20px;"> 코딩 잘하고 싶은 사람들이 모인 팀!</p>
+            <p>팀 특징/목표 :</p>
+            <p>팀 약속 : </p>
+        </div>
     </div>
     <div class="bottom">
         <hr>
