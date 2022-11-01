@@ -187,25 +187,26 @@
                 success: function (response) {
                     let rows = response['sein_comment']
 
-                    for (let i = 0; i < rows.length; i++) {
-                        let comment = rows[i]['commnet']
-                        let userId = rows[i]['userId']
+                    console.log(rows)
 
-                        let temp_html = '<div class="card" style="width : 900px; box-shadow: 2px 2px 2px 2px darkgrey; margin: 20px auto 0px 20px;">' +
-                            '<div class="card-body">' +
-                            '<blockquote class="blockquote mb-0">' +
-                            '<p>${comment}</p>' +
-                            '<footer class="blockquote-footer">${userId}</footer>' +
-                            '</blockquote>' +
-                            '</div>' +
-                            '</div>'
+                    for (let i = 0; i < rows.length; i++) {
+                        let comment = rows[i]['comment']
+                        let userId = rows[i]['name']
+
+                        let temp_html = `<div class="card" style="width : 900px; box-shadow: 2px 2px 2px 2px darkgrey; margin: 20px auto 0px 20px;">
+                                            <div class="card-body">
+                                                <blockquote class="blockquote mb-0">
+                                                <p>${comment}</p>
+                                                <footer class="blockquote-footer">${userId}</footer>
+                                                </blockquote>
+                                            </div>
+                                        </div>`
 
                         $('#comment-list').append(temp_html)
                     }
                 }
             });
         }
-
 
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
