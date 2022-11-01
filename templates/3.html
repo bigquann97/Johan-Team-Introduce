@@ -185,7 +185,7 @@
                 url: "/sein-api",
                 data: {},
                 success: function (response) {
-                    let rows = response['comments']
+                    let rows = response['sein_comment']
 
                     for (let i = 0; i < rows.length; i++) {
                         let comment = rows[i]['commnet']

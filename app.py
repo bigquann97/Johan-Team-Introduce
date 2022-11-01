@@ -88,7 +88,7 @@ def sein_comment_post():
 @app.route("/sein-api", methods=["GET"])
 def sein_get():
     find = list(db.sein.find({}, {'_id': False}))
-    return jsonify({'sein': find})
+    return jsonify({'sein_comment': find})
 
 @app.route("/ikhyeon", methods=["POST"])
 def ikhyeon_post():
