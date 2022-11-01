@@ -91,7 +91,7 @@ def sein_get():
     find = list(db.sein.find({}, {'_id': False}))
     return jsonify({'sein_comment': find})
 
-@app.route("/ikhyeon", methods=["POST"])
+@app.route("/api/ikhyeon", methods=["POST"])
 def ikhyeon_post():
     comment_receive = request.form['comment_give']
     name_receive = request.form['name_give']
@@ -102,7 +102,7 @@ def ikhyeon_post():
     db.ikhyeon.insert_one(doc)
     return jsonify({'msg':'업로드 완료!'})
 
-@app.route("/ikhyeon", methods=["GET"])
+@app.route("/api/ikhyeon", methods=["GET"])
 def ikhyeon_get():
     ikhyeon_list = list(db.ikhyeon.find({}, {'_id': False}))
     print(ikhyeon_list)
