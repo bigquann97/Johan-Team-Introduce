@@ -58,7 +58,7 @@ def gwanho_cheer():
     return jsonify({'stats': 'ok'})
 
 
-@app.route("/seong", methods=["POST"])
+@app.route("/seongrock", methods=["POST"])
 def seong_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
@@ -69,7 +69,7 @@ def seong_comment_post():
     db4.seong.insert_one(doc)
     return jsonify({'msg': '댓글 작성 완료!'})
 
-@app.route("/seong-api", methods=["GET"])
+@app.route("/seongrock-api", methods=["GET"])
 def seong_get():
     find = list(db4.seong.find({}, {'_id': False}))
     return jsonify({'seong': find})
