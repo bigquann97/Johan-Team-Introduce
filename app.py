@@ -57,22 +57,46 @@ def gwanho_cheer():
     return jsonify({'stats': 'ok'})
 
 
+
+
+
+'''''''''''''''''''''
+성락 소개페이지 API 시작
+'''''''''''''''''''''
+
 @app.route("/seongrock", methods=["POST"])
 def seong_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
+    index_receive = request.form['index']
     doc = {
         'name': name_receive,
         'comment': comment_receive,
+        'index' : index_receive,
     }
     db.seong.insert_one(doc)
-    return jsonify({'msg': '댓글 작성 완료!'})
+    return jsonify({'msg': '댓글 작성 완료'})
 
 @app.route("/seongrock-api", methods=["GET"])
 def seong_get():
     find = list(db.seong.find({}, {'_id': False}))
     print(find)
     return jsonify({'seong': find})
+
+@app.route("/seongrock-comment", methods=["DELETE"])
+def seong_delete_comment():
+    index_receive = request.form['target']
+    db.seong.delete_one({index : index_receive})
+    return jsonify({'msg' : '댓글 삭제 완료'})
+
+
+'''''''''''''''''''''
+성락 소개페이지 API 끝
+'''''''''''''''''''''
+
+
+
+
 
 
 @app.route("/seinc", methods=["POST"])
