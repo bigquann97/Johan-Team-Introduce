@@ -8,8 +8,13 @@ db = client.johan
 @app.route('/')
 def home():
     return render_template('index.html')
+<<<<<<< HEAD
 
 @app.route('/teaminto')
+=======
+ 
+@app.route('/team')
+>>>>>>> 9e95297e081713e42af4109a2daf29889214e68a
 def team():
     return render_template('teaminto.html')
 
