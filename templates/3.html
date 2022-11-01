@@ -1,112 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-    <title>한세인 팀원 소개</title>
+<title>한세인 팀원 소개</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
 
-    <style>
-     * {
-            font-family: 'Noto Serif KR', serif;
-     }
-    .header-kim{
-            width: 80%;
-            height: 250px;
-
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/kim.jpg');
-            background-position: center 30%;
-            background-size: cover;
-            margin : auto;
-            color: white;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+<style>
+    * {
+        font-family: 'Noto Serif KR', serif;
     }
-    .header-kim > h2{
-        margin-left: 630px;
-        margin-top : 50px;
+
+    .header-kim {
+        width: 80%;
+        height: 250px;
+
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/kim.jpg');
+        background-position: center 30%;
+        background-size: cover;
+        margin: auto;
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
-    .header_hr{
+
+    .header-kim > h2 {
+        text-align: right;
+        margin-left: 700px;
+        margin-top: 50px;
+    }
+
+    .header_hr {
         margin-left: 10%;
-        width : 80%;
-        border : solid silver 1px;
+        width: 80%;
+        border: solid silver 1px;
     }
-    .header_hr_bottom{
+
+    .header_hr_bottom {
         margin-left: 10%;
-        width : 80%;
-        margin-top : 55px;
-        border : solid silver 1px;
+        width: 80%;
+        margin-top: 55px;
+        border: solid silver 1px;
     }
-    .menubar{
+
+    .menubar {
         list-style-type: none;
-        margin-left : 80px;
+        margin-left: 130px;
     }
-    .menubar > li{
+
+    .menubar > li {
         float: left;
         margin-left: 60px;
         text-decoration: none;
     }
-    .menubar > li a{
-        color : black;
+
+    .menubar > li a {
+        color: black;
+        text-decoration: none;
+        text-align: left;
+    }
+
+    .menubar > li a:hover {
+        color: cornflowerblue;
         text-decoration: none;
     }
-    .menubar > li a:hover{
-        color : cornflowerblue;
-        text-decoration: none;
-    }
-    .center{
+
+    .center {
         width: 80%;
-        height: 800px;
-        border : 1px solid red;
-        margin : auto;
+        height: 1500px;
+        margin: auto;
     }
-    .bottom > hr{
+
+    .bottom > hr {
         margin-left: 10%;
-        width : 80%;
-        margin-top : 30px;
-        border : solid silver 1px;
+        width: 80%;
+        margin-top: 30px;
+        border: solid silver 1px;
         margin-bottom: 5px;
     }
-    .bottom > p{
+
+    .bottom > p {
         margin-left: 70%;
         margin-bottom: 30px;
         font-size: 10px;
     }
+
+    .center_1 {
+        width: 500px;
+        height: 700px;
+        margin-left: 130PX;
+        float: left;
+    }
+
+    .center_1 > img {
+        width: 500px;
+        height: 650px;
+        border-radius: 5px;
+        float: left;
+    }
+
+    .pro {
+        margin-top: 50px;
+        margin-left: 670px;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .center_2 > p {
+        margin-top: 50px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .mypost {
+        width: 95%;
+        max-width: 900px;
+        margin: 150px auto 50px 150px;
+
+        box-shadow: 0px 0px 3px 0px black;
+        padding: 20px;
+    }
+
+    .mypost > button {
+        margin-top: 15px;
+    }
+
+    .mycards {
+        width: 95%;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .mycards > .card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 </style>
+<script>
+        $(document).ready(function () {
+            set_temp()
+            show_comment()
+        });
+
+        function set_temp() {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+                data: {},
+                success: function (response) {
+                    $('#temp').text(response['temp'])
+                }
+            })
+        }
+
+        function save_comment() {
+            let userId = $('#name').val()
+            let comment = $('#comment').val()
+
+            $.ajax({
+                type: 'POST',
+                url: '/homework',
+                data: {userId_give: userId, comment_give: comment},
+                success: function (response) {
+                    alert(response["응원완료"])
+                    window.location.reload()
+                }
+            })
+        }
+
+        function show_comment() {
+            $.ajax({
+                type: "GET",
+                url: "/homework",
+                data: {},
+                success: function (response) {
+                    let rows = response['comments']
+
+                    for (let i = 0; i < rows.length; i++) {
+                        let comment = rows[i]['commnet']
+                        let userId = rows[i]['userId']
+
+                        console.log(comment, userId)
+
+                        let temp_html = '<div class="card">' +
+                                            '<div class="card-body">' +
+                                                '<blockquote class="blockquote mb-0">' +
+                                                    '<p>${comment}</p>' +
+                                                    '<footer class="blockquote-footer">${userId}</footer>' +
+                                                '</blockquote>' +
+                                            '</div>'+
+                                        '</div>'
+
+                        $('#comment-list').append(temp_html)
+                    }
+                }
+            });
+        }
+    </script>
+
+</head>
 <body>
-    <div class="header-kim">
-        <h2>코딩 잘하는 김.조.한</h2>
+<div class="header-kim">
+    <h2>코딩 잘하는 김.조.한</h2>
+</div>
+<div>
+    <hr class="header_hr">
+    <ul class="menubar">
+        <li><a href="#">팀 소개</a></li>
+        <li><a href="#">팀원 소개</a></li>
+    </ul>
+    <hr class="header_hr_bottom">
+</div>
+<div class="center">
+    <div class="center_1">
+        <img src="../static/sein.JPG">
     </div>
-    <div>
-        <hr class="header_hr">
-        <ul class="menubar">
-            <li><a href="#">팀 소개</a></li>
-            <li><a href="#">팀원 소개</a></li>
-        </ul>
-        <hr class="header_hr_bottom">
+    <p class="pro"> 🌸 프로필(Profile)🌸 </p>
+    <div class="center_2">
+        <p style=""> 이름 : 한 세 인(韓 世 仁) / 뜻 : 세상에 어진 사람이 되어라 </p>
+        <p> 장점 : 웃음이 많고 이해심이 넓다</p>
+        <p> MBTI : E/I(왔다갔다)NFJ</p>
+        <p> 블로그 : https://sein151.tistory.com </p>
+        <p> 목표 : 다시 돌아온 만큼 온 힘을 다해 열정을 쏟자! </p>
+        <p style="text-decoration-line: underline; color : orangered"> 나를 표현하는 키워드 : 책임감, 포용력, 끈기, 도전의식 </p>
+        <p> 취미 : 등산, 헬스, 여행, 드라이브</p>
     </div>
-    <div class="center">
-        여기에 내용 삽입
+
+    <div class="mypost">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="name" placeholder="url">
+            <label for="floatingInput">닉네임</label>
+        </div>
+        <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="comment"
+                          style="height: 100px"></textarea>
+            <label for="floatingTextarea2">응원댓글</label>
+        </div>
+        <button onclick="save_comment()" type="button" class="btn btn-dark">응원 남기기</button>
     </div>
-    <div class="bottom">
-        <hr>
-        <p>copyrightⓒ2022 코딩잘하는 김조한 all rights reserved.</p>
+    <hr style="width : 1000px; margin : auto;">
+    <p style="margin-left: 150px; margin-top : 20px;">#남겨주신 응원 메세지</p>
+    <div class="mycards" id="comment-list">
     </div>
+</div>
+<div class="bottom">
+    <hr>
+    <p>copyrightⓒ2022 코딩잘하는 김조한 all rights reserved.</p>
+</div>
 </body>
 </html>
