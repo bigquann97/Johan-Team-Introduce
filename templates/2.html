@@ -286,7 +286,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/introduce',
+                url: '/ikhyeon',
                 data: {name_give: name, comment_give: comment},
                 success: function (response) {
                     alert(response['msg'])
@@ -298,11 +298,11 @@
         function show_comment() {
             $.ajax({
                 type: "GET",
-                url: "/introduces",
+                url: "/ikhyeon",
                 data: {},
                 success: function (response) {
                     console.log(response)
-                    let rows = response['intro']
+                    let rows = response['ik']
 
                     for (let i = 0; i < rows.length; ++i) {
                         let name = rows[i]['name']
