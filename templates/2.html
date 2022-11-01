@@ -27,7 +27,62 @@
         ul, li {
             list-style: none;
         }
+ .header-kim {
+            width: 80%;
+            height: 250px;
 
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/kim.jpg');
+            background-position: center 30%;
+            background-size: cover;
+            margin: auto;
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-kim > h2 {
+            text-align: right;
+            margin-left: 700px;
+            margin-top: 50px;
+        }
+
+        .header_hr {
+            margin-left: 10%;
+            width: 80%;
+            border: solid silver 1px;
+        }
+
+        .header_hr_bottom {
+            margin-left: 10%;
+            width: 80%;
+            margin-top: 55px;
+            border: solid silver 1px;
+        }
+
+        .menubar {
+            list-style-type: none;
+            margin-left: 100px;
+        }
+
+        .menubar > li {
+            float: left;
+            margin-left: 60px;
+            text-decoration: none;
+        }
+
+        .menubar > li a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .menubar > li a:hover {
+            color: cornflowerblue;
+            text-decoration: none;
+        }
         .mypost {
             width: 105%;
             max-width: 500px;
@@ -286,7 +341,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/introduce',
+                url: '/ikhyeon',
                 data: {name_give: name, comment_give: comment},
                 success: function (response) {
                     alert(response['msg'])
@@ -298,11 +353,11 @@
         function show_comment() {
             $.ajax({
                 type: "GET",
-                url: "/introduces",
+                url: "/ikhyeon",
                 data: {},
                 success: function (response) {
                     console.log(response)
-                    let rows = response['intro']
+                    let rows = response['ikhyeon']
 
                     for (let i = 0; i < rows.length; ++i) {
                         let name = rows[i]['name']
@@ -325,6 +380,18 @@
     </script>
 </head>
 <body>
+<div class="wrap">
+    <div class="header-kim">
+        <h2>코딩 잘하는 김.조.한</h2>
+    </div>
+    <div>
+        <hr class="header_hr">
+        <ul class="menubar">
+            <li><a href="/">팀 소개</a></li>
+            <li><a href="/teaminto">팀원 소개</a></li>
+        </ul>
+        <hr class="header_hr_bottom">
+    </div>
 <div class="mypic">
     <img src="https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory2.daumcdn.net%2Ftistory%2F5553532%2Fattach%2F0ecda08acbea480bab92d5deb0d359b2"
          class="img-thumbnail" alt="...">

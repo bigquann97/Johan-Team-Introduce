@@ -171,7 +171,7 @@
             $.ajax({
                 type: 'POST',
                 url: '/seinc',
-                data: {userId_give: userId, comment_give: comment},
+                data: {name_give: userId, comment_give: comment},
                 success: function (response) {
                     alert("응원 완료!")
                     window.location.reload()
@@ -185,7 +185,7 @@
                 url: "/sein-api",
                 data: {},
                 success: function (response) {
-                    let rows = response['comments']
+                    let rows = response['sein_comment']
 
                     for (let i = 0; i < rows.length; i++) {
                         let comment = rows[i]['commnet']

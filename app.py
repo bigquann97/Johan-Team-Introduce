@@ -88,8 +88,9 @@ def sein_comment_post():
 @app.route("/sein-api", methods=["GET"])
 def sein_get():
     find = list(db.sein.find({}, {'_id': False}))
-    return jsonify({'sein': find})
+    return jsonify({'sein_comment': find})
 
+<<<<<<< HEAD
 @app.route("/byeongdoo", methods=["POST"])
 def byeongdoo_comment_post():
     name_receive = request.form['name_give']
@@ -104,6 +105,24 @@ def byeongdoo_comment_post():
 def byeongdoo_get():
     find = list(db.sein.find({}, {'_id': False}))
     return jsonify({'byeongdoo': find})
+=======
+@app.route("/ikhyeon", methods=["POST"])
+def ikhyeon_post():
+    comment_receive = request.form['comment_give']
+    name_receive = request.form['name_give']
+    doc = {
+        'comment':comment_receive,
+        'name':name_receive
+    }
+    db.ikhyeon.insert_one(doc)
+    return jsonify({'msg':'업로드 완료!'})
+
+@app.route("/ikhyeon", methods=["GET"])
+def ikhyeon_get():
+    ikhyeon_list = list(db.ikhyeon.find({}, {'_id': False}))
+    print(ikhyeon_list)
+    return jsonify({'ikhyeon':ikhyeon_list})
+>>>>>>> 1d1bb20a6fcdd093394b6e0ad133da41f978f4d9
 
 '''
 @app.route("/gwanho-cheer", methods=["POST"])
