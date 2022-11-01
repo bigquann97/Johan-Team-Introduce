@@ -25,7 +25,12 @@
             width: 95%;
             max-width: 500px;
         }
-
+        .mycomments{
+            margin: 20px auto 20px auto; 
+            width: 95%;
+            max-width: 500px;
+        }
+        
         .mypost {
             width: 95%;
             max-width: 500px;
@@ -128,6 +133,10 @@
                     data: {},
                     success: function (response) {
                         let seongrock = response['seong']
+<<<<<<< HEAD
+=======
+                        console.log(seongrock)
+>>>>>>> 7bac74dc49d6fcde55f8fa39edace204a5445b4b
                         for(let i = 1; i < seongrock.length; i++) {
                             let name = seongrock[i]['name']
                             let comment = seongrock[i]['comment']
@@ -142,7 +151,7 @@
                             console.log(temp_html)
                             $('#comment-list').append(temp_html)
                         }
-                        $('#count').text(count)
+                        
                     }
                 })
         }
@@ -233,6 +242,8 @@
         </div>
         <button onclick="save_comment()" type="button" class="btn btn-dark">댓글 남기기</button>
     </div>
+    
+    
     
     
     <div id="comment-list">
