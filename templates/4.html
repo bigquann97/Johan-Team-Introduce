@@ -20,6 +20,7 @@
         * {
             font-family: 'Noto Serif KR', serif;
         }
+
         .mypic {
             margin: 20px auto 20px auto; 
             width: 95%;
@@ -35,25 +36,15 @@
             padding: 20px;
         
         }
-        .mycomments{
-            margin: 20px auto 20px auto; 
-            width: 95%;
-            max-width: 500px;
-        }
 
         .mypost > button {
             margin-top: 15px;
         }
 
-        .mycards {
+        .mycomments{
+            margin: 20px auto 20px auto;
             width: 95%;
             max-width: 500px;
-            margin: auto;
-        }
-
-        .mycards > .card {
-            margin-top: 10px;
-            margin-bottom: 10px;
         }
 
         .intro{
@@ -66,57 +57,80 @@
         }
         
         .link{
-            flex:left;
+            flex: auto;
         }
-        .menubar{
-            width: 95%;
+        .header{
+            width: 100% ;
             max-width: 500px;
             margin: 20px auto 20px auto;
-            
         }
-        .menubarlist{
-            list-style-type: none;
-        }
-        .menubarlist > li {
-            width: 15%;
-            max-width: 500px;
-            margin: 20px auto 20px auto;
-            text-decoration: none;
-            float: left;
-        }
-
-        .menubarlist > li a {
-            color: black;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .menubarlist > li a:hover {
-            color: cornflowerblue;
-            text-decoration: none;
-        }
-
-
         .header_hr {
-            width: 100%;
+            width: 100% ;
             max-width: 500px;
             margin: 20px auto 20px auto;
         }
+
         .header_hr_bottom {
             width: 100%;
             max-width: 500px;
             margin: 20px auto 20px auto;
             border: solid silver 1px;
         }
-        .header_top{
-            width: 95%;
-            max-width: 500px;
-            margin: 20px auto 20px auto;
+
+        .header-kim {
+            width: 80%;
+            height: 250px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/kim.jpg');
+            background-position: center 30%;
+            background-size: cover;
+            margin: auto;
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .header_bootom{
-            width: 95%;
-            max-width: 500px;
-            margin: 20px auto 20px auto;
+
+        .header-kim > h2 {
+            margin-left: 550px;
+            margin-top: 50px;
+        }
+
+        .header_hr {
+            margin-left: 10%;
+            width: 80%;
+            border: solid silver 1px;
+        }
+
+        .header_hr_bottom {
+            margin-left: 10%;
+            width: 80%;
+            margin-top: 55px;
+            border: solid silver 1px;
+        }
+
+        .menubar {
+            list-style-type: none;
+            margin-left: 80px;
+        }
+
+        .menubar > li {
+            float: left;
+            margin-left: 60px;
+            text-decoration: none;
+        }
+
+        .menubar > li a {
+            color: black;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .menubar > li a:hover {
+            color: cornflowerblue;
+            text-decoration: none;
         }
 
 
@@ -197,19 +211,15 @@
 </head>
 <body>
 
-    <div class = "header_top">
-        <hr class="header_hr">
+    <div class="header-kim">
+        <h2>코딩 잘하는 김.조.한</h2>
     </div>
-    
-    <div class = "menubar">
-        <ul class="menubarlist">
+    <div class="header">
+        <hr class="header_hr">
+        <ul class="menubar">
             <li><a href="/">팀 소개</a></li>
             <li><a href="/teaminto">팀원 소개</a></li>
         </ul>
-    </div>
-    
-    
-    <div class = "header_bootom">
         <hr class="header_hr_bottom">
     </div>
 
