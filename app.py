@@ -4,7 +4,6 @@ app = Flask(__name__)
 from pymongo import MongoClient
 client = MongoClient('mongodb://sparta:sparta@43.201.105.241', 27017)
 db = client.johan
-db4 = client.seong
 
 @app.route('/')
 def home():
@@ -27,7 +26,7 @@ def sein():
     return render_template('3.html')
 
 @app.route('/seong')
-def seongrak():
+def seongrock():
     return render_template('4.html')
 
 @app.route('/quan')
@@ -66,12 +65,12 @@ def seong_comment_post():
         'name': name_receive,
         'comment': comment_receive,
     }
-    db4.seong.insert_one(doc)
+    db.seong.insert_one(doc)
     return jsonify({'msg': '댓글 작성 완료!'})
 
 @app.route("/seongrock-api", methods=["GET"])
 def seong_get():
-    find = list(db4.seong.find({}, {'_id': False}))
+    find = list(db.seong.find({}, {'_id': False}))
     return jsonify({'seong': find})
 
 '''
