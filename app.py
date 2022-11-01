@@ -4,6 +4,7 @@ app = Flask(__name__)
 from pymongo import MongoClient
 client = MongoClient('mongodb://sparta:sparta@43.201.105.241', 27017)
 db = client.johan
+db4 = client.seong
 
 @app.route('/')
 def home():
@@ -55,6 +56,35 @@ def gwanho_cheer():
     count = find[0]['count']
     db.gwanho.update_one({'count': count}, {'$set':{'count': count + 1}})
     return jsonify({'stats': 'ok'})
+
+
+@app.route("/seong", methods=["POST"])
+def seong_comment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
+    doc = {
+        'name': name_receive,
+        'comment': comment_receive,
+    }
+    db4.seong.insert_one(doc)
+    return jsonify({'msg': '댓글 작성 완료!'})
+
+@app.route("/seong-api", methods=["GET"])
+def seong_get():
+    find = list(db4.seong.find({}, {'_id': False}))
+    return jsonify({'seong': find})
+
+'''
+@app.route("/gwanho-cheer", methods=["POST"])
+def gwanho_cheer():
+    find = list(db.gwanho.find({}, {'_id': False}))
+    count = find[0]['count']
+    db.gwanho.update_one({'count': count}, {'$set':{'count': count + 1}})
+    return jsonify({'stats': 'ok'})
+'''
+
+
+
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)
