@@ -92,16 +92,18 @@ def seong_delete_comment():
     return jsonify({'msg' : '댓글 삭제 완료'})
 
 
-'''''''''''''''''''''
-성락 소개페이지 API 끝
-'''''''''''''''''''''
-
 '''테스트 버전 실행할따마다 db비우기'''
 def clear():
     db.seong.delete_many({})
     return
 
 clear()
+
+'''''''''''''''''''''
+성락 소개페이지 API 끝
+'''''''''''''''''''''
+
+
 
 
 
