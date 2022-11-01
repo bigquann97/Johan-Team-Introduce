@@ -91,10 +91,10 @@
                     data: {},
                     success: function (response) {
                         let seongrock = response['seongrock']
-                        let count = gwanho[0]['count']
-                        for(let i = 1; i < gwanho.length; i++) {
-                            let name = gwanho[i]['name']
-                            let comment = gwanho[i]['comment']
+                        let count = seongrock[0]['count']
+                        for(let i = 1; i < seongrock.length; i++) {
+                            let name = seongrock[i]['name']
+                            let comment = seongrock[i]['comment']
                             let temp_html = `<div class="card">
                                                 <div class="card-body">
                                                     <blockquote class="blockquote mb-0">
