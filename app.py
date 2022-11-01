@@ -9,11 +9,11 @@ db = client.johan
 def home():
     return render_template('index.html')
 
-@app.route('/team')
+@app.route('/teaminto')
 def team():
     return render_template('teaminto.html')
 
-@app.route('/byungdoo')
+@app.route('/bung')
 def byungdoo():
     return render_template('1.html')
 
@@ -25,11 +25,11 @@ def ikhyeon():
 def sein():
     return render_template('3.html')
 
-@app.route('/seongrak')
+@app.route('/sung')
 def seongrak():
     return render_template('4.html')
 
-@app.route('/gwanho')
+@app.route('/quan')
 def gwanho():
     return render_template('5.html')
 
