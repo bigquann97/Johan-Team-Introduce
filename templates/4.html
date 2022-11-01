@@ -137,10 +137,10 @@
                         let seongrock = response['seongrock']
                         console.log(seongrock)
                         index_max = -1;
-                        for(let i = 1; i < seongrock.length; i++) {
+                        for(let i = 0; i < seongrock.length; i++) {
                             let name = seongrock[i]['name']
                             let comment = seongrock[i]['comment']
-                            let index = seongrock[i]['index']
+                            let index = parseInt(seongrock[i]['index'])
                             if(index_max < index)
                                 index_max = index;
                             let temp_html = `<div class="card">
@@ -148,7 +148,7 @@
                                                     <blockquote class="blockquote mb-0">
                                                         <p>${comment}</p>
                                                         <footer class="blockquote-footer">${name}</footer>
-                                                        <button onclick="delete_comment()" type="button" class="btn btn-dark" value="${index}">삭제</button>
+                                                        <button onclick="delete_comment(this); window.location.reload();" type="button" class="btn btn-dark" value="${index}">삭제</button>
                                                     </blockquote>
                                                 </div>
                                             </div>`
@@ -183,7 +183,7 @@
         }
 
         function delete_comment(index) {
-            let target = index.value;
+            let target = parseInt(index.value);
             console.log(target);
             $.ajax({
                 type: 'DELETE',
@@ -214,7 +214,7 @@
     </div>
 
     <div class="mypic">
-        <img src="https://postfiles.pstatic.net/MjAyMjEwMzFfMjM1/MDAxNjY3MjExODg2MjI5.bvmZIMZE9wo3bJjF2EKVb03k1-70RBPgZQ619xvzjrAg.rXZvSJlgJ1U3MXVwZz-_I80zTBMbZlklIqAAAvY8Wp4g.JPEG.tjdfkr011/KakaoTalk_Photo_2022-10-31-19-21-44.jpeg?type=w773" width="100%"; max-width="500px";>
+        <img src="../static/profile_5.jpeg" width="100%"; max-width="500px";>
     </div>
 
 
@@ -263,13 +263,7 @@
         <h4><b>댓글 목록</b></h4>
 
         <div class="card">
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>${comment}</p>
-                    <footer class="blockquote-footer">${name}</footer>
-                    <button onclick="delete_comment(this); window.location.reload();" type="button" class="btn btn-dark" value="1">삭제</button>
-                </blockquote>
-            </div>
+
         </div>
     </div>
 
