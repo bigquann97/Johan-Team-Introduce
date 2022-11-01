@@ -96,7 +96,12 @@ def seong_delete_comment():
 성락 소개페이지 API 끝
 '''''''''''''''''''''
 
+'''테스트 버전 실행할따마다 db비우기'''
+def clear():
+    db.seong.delete_many({})
+    return
 
+clear()
 
 
 
