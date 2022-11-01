@@ -41,13 +41,13 @@
         justify-content: center;
         border-radius: 10px;
         margin: 30px auto;
-        padding: auto;
+        padding:0px;
     }
 
     .navigation ul {
         display: flex;
         width: 500px;
-        padding: auto;
+        margin:auto;
     }
 
     .navigation ul li {
@@ -62,7 +62,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
         width: 75px;
         text-align: center;
         font-weight: 500;
@@ -82,18 +82,20 @@
         transform: translateX(-35px);
     }
 
-    .navigation ul li a .text {
+    .navigation ul li a .oldtext {
         position: absolute;
         color: #222327;
         font-weight: 400;
         font-size: 0.8em;
         letter-spacing: 0.05em;
         transition: 0.5s;
-        opacity: 0;
-        tranform: translateY(20px);
+        opacity: 1;
+        transform: translateY(20px);
+        /*margin-top:50px;*/
+
     }
 
-    .navigation ul li:hover a .text {
+    .navigation ul li:hover a .oldtext {
         opacity: 1; /*투명도*/
         transform: translate(10px, -10px); /*움직이기*/
 
@@ -107,7 +109,7 @@
         letter-spacing: 0.05em;
         transition: 0.5s;
         opacity: 0;
-        tranform: translateY(20px);
+        transform: translateY(20px);
     }
 
     .navigation ul li:hover a .text2 {
@@ -124,7 +126,7 @@
         letter-spacing: 0.05em;
         transition: 0.5s;
         opacity: 0;
-        tranform: translateY(20px);
+        transform: translateY(20px);
     }
 
     .navigation ul li:hover a .text3 {
@@ -141,7 +143,7 @@
         letter-spacing: 0.05em;
         transition: 0.5s;
         opacity: 0;
-        tranform: translateY(20px);
+        transform: translateY(20px);
     }
 
     .navigation ul li:hover a .blogtext {
@@ -178,7 +180,7 @@
         border: 2px solid rgb(255, 255, 255, 0.5);
         width: 500px;
         height: 500px;
-        margin: 30px auto 30px auto;
+        margin: 0 auto 30px auto;
         overflow: hidden;
         box-shadow: #485F6E;
 
@@ -222,7 +224,7 @@
     .like-box ul {
         display: flex;
         width: 100px;
-        padding: 0px;
+        padding: 0;
         margin: 0;
 
     }
@@ -270,7 +272,6 @@
         transition: 0.5s;
         opacity: 1;
         justify-content: center;
-        align-text: center;
         margin: auto;
     }
 
@@ -308,7 +309,7 @@
                 <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
                 </span>
-                <span class="text">Name</span>
+                <span class="oldtext">Name</span>
                 <span class="text2">한병두</span>
             </a>
         </li>
@@ -317,7 +318,7 @@
                 <span class="icon">
                     <ion-icon name="help-outline"></ion-icon>
                 </span>
-                <span class="text">Age</span>
+                <span class="oldtext">Age</span>
                 <span class="text2">29</span>
             </a>
         </li>
