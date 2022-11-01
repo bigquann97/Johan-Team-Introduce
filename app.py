@@ -71,6 +71,7 @@ def seong_comment_post():
 @app.route("/seongrock-api", methods=["GET"])
 def seong_get():
     find = list(db.seong.find({}, {'_id': False}))
+    print(find)
     return jsonify({'seong': find})
 
 

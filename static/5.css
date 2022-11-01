@@ -11,6 +11,11 @@
     margin: auto;
 }
 
+.wrap > .mypic > .home {
+    color: blue;
+    padding-top: 60px;
+}
+
 .mypic {
     background-size: 300px;
     width: 300px;

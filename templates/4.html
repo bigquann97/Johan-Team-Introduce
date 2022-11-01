@@ -127,7 +127,7 @@
                     url: '/seongrock-api',
                     data: {},
                     success: function (response) {
-                        let seongrock = response['seongrock']
+                        let seongrock = response['seong']
                         for(let i = 1; i < seongrock.length; i++) {
                             let name = seongrock[i]['name']
                             let comment = seongrock[i]['comment']
