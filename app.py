@@ -25,7 +25,7 @@ def ikhyeon():
 def sein():
     return render_template('3.html')
 
-@app.route('/sung')
+@app.route('/seong')
 def seongrak():
     return render_template('4.html')
 
