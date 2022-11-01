@@ -73,6 +73,24 @@ def seong_get():
     find = list(db.seong.find({}, {'_id': False}))
     return jsonify({'seong': find})
 
+
+@app.route("/seinc", methods=["POST"])
+def sein_comment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
+    doc = {
+        'name': name_receive,
+        'comment': comment_receive,
+    }
+    db.sein.insert_one(doc)
+    return jsonify({'msg': '댓글 작성 완료!'})
+
+@app.route("/sein-api", methods=["GET"])
+def sein_get():
+    find = list(db.sein.find({}, {'_id': False}))
+    return jsonify({'sein': find})
+
+
 '''
 @app.route("/gwanho-cheer", methods=["POST"])
 def gwanho_cheer():

@@ -170,7 +170,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/johan/sein/comment',
+                url: '/seinc',
                 data: {userId_give: userId, comment_give: comment},
                 success: function (response) {
                     alert("응원 완료!")
@@ -182,7 +182,7 @@
         function show_comment() {
             $.ajax({
                 type: "GET",
-                url: "/johan/sein/comment",
+                url: "/sein-api",
                 data: {},
                 success: function (response) {
                     let rows = response['comments']
