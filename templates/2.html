@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="../static/2.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,320 +17,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
           rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Noto Serif KR', serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        ul, li {
-            list-style: none;
-        }
- .header-kim {
-            width: 80%;
-            height: 250px;
-
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/kim.jpg');
-            background-position: center 30%;
-            background-size: cover;
-            margin: auto;
-            color: white;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .header-kim > h2 {
-            text-align: right;
-            margin-left: 700px;
-            margin-top: 50px;
-        }
-
-        .header_hr {
-            margin-left: 10%;
-            width: 80%;
-            border: solid silver 1px;
-        }
-
-        .header_hr_bottom {
-            margin-left: 10%;
-            width: 80%;
-            margin-top: 55px;
-            border: solid silver 1px;
-        }
-
-        .menubar {
-            list-style-type: none;
-            margin-left: 100px;
-        }
-
-        .menubar > li {
-            float: left;
-            margin-left: 60px;
-            text-decoration: none;
-        }
-
-        .menubar > li a {
-            color: black;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .menubar > li a:hover {
-            color: cornflowerblue;
-            text-decoration: none;
-        }
-        .mypost {
-            width: 105%;
-            max-width: 500px;
-            margin: 20px auto 20px auto;
-
-            box-shadow: 0px 0px 3px 0px black;
-            padding: 20px;
-            margin-top: 55px;
-        }
-
-        .flex-container {
-            font-weight: bolder;
-
-        }
-
-        .mypic {
-            margin: 50px;
-            width: 100%;
-            height: 300px;
-            display: flex;
-
-        }
-
-        .mytext {
-            letter-spacing: 10px;
-            font-size: 25px;
-            font-weight: bolder;
-            min-width: 900px;
-            margin: 40px 40px;
-        }
-
-        .mytext > ul {
-            border: 2px solid gray;
-            margin-top: 35px;
-        }
-
-        .mytext > oi {
-            padding: 20px 50px;
-        }
-
-        .flex-container {
-            letter-spacing: 5px;
-            margin: 40px;
-            line-height: 3em;
-            min-width: 300px;
-        }
-
-        .mycards {
-            width: 95%;
-            max-width: 500px;
-            margin: auto;
-        }
-
-        .mycards > .card {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        a {
-            color: gray;
-        }
-
-        a:hover {
-            color: gray;
-        }
-
-        .section input[id*="slide"] {
-            display: none;
-        }
-
-        .section .slidewrap {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section .slidelist {
-            white-space: nowrap;
-            font-size: 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .section .slidelist > li {
-            display: inline-block;
-            vertical-align: middle;
-            width: 100%;
-            transition: all .5s;
-        }
-
-        .section .slidelist > li > a {
-            display: block;
-            position: relative;
-        }
-
-        .section .slidelist > li > a img {
-            width: 100%;
-        }
-
-        .section .slidelist label {
-            position: absolute;
-            z-index: 10;
-            top: 50%;
-            transform: translateY(-50%);
-            padding: 50px;
-            cursor: pointer;
-        }
-
-        .section .slidelist .textbox {
-            position: absolute;
-            z-index: 1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        .section .slidelist .textbox h3 {
-            font-size: 36px;
-            color: #fff;;
-            transform: translateY(30px);
-            transition: all .5s;
-        }
-
-        .section .slidelist .textbox p {
-            font-size: 16px;
-            color: #fff;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all .5s;
-        }
-
-        /* input에 체크되면 슬라이드 효과 */
-        .section input[id="slide01"]:checked ~ .slidewrap .slidelist > li {
-            transform: translateX(0%);
-        }
-
-        .section input[id="slide02"]:checked ~ .slidewrap .slidelist > li {
-            transform: translateX(-100%);
-        }
-
-        .section input[id="slide03"]:checked ~ .slidewrap .slidelist > li {
-            transform: translateX(-200%);
-        }
-
-        /* input에 체크되면 텍스트 효과 */
-        .section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .textbox h3 {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .2s;
-        }
-
-        .section input[id="slide01"]:checked ~ .slidewrap li:nth-child(1) .textbox p {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .4s;
-        }
-
-        .section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .textbox h3 {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .2s;
-        }
-
-        .section input[id="slide02"]:checked ~ .slidewrap li:nth-child(2) .textbox p {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .4s;
-        }
-
-        .section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .textbox h3 {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .2s;
-        }
-
-        .section input[id="slide03"]:checked ~ .slidewrap li:nth-child(3) .textbox p {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .4s;
-        }
-
-        /* 좌,우 슬라이드 버튼 */
-        .slide-control > div {
-            display: none;
-        }
-
-        .section .left {
-            left: 30px;
-            background: url('./img/left.png') center center / 100% no-repeat;
-        }
-
-        .section .right {
-            right: 30px;
-            background: url('./img/right.png') center center / 100% no-repeat;
-        }
-
-        .section input[id="slide01"]:checked ~ .slidewrap .slide-control > div:nth-child(1) {
-            display: block;
-        }
-
-        .section input[id="slide02"]:checked ~ .slidewrap .slide-control > div:nth-child(2) {
-            display: block;
-        }
-
-        .section input[id="slide03"]:checked ~ .slidewrap .slide-control > div:nth-child(3) {
-            display: block;
-        }
-
-        /* 페이징 */
-        .slide-pagelist {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .slide-pagelist > li {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .slide-pagelist > li > label {
-            display: block;
-            padding: 8px 30px;
-            border-radius: 30px;
-            background: #ccc;
-            margin: 20px 10px;
-            cursor: pointer;
-        }
-
-        .section input[id="slide01"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(1) > label {
-            background: #999;
-        }
-
-        .section input[id="slide02"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(2) > label {
-            background: #999;
-        }
-
-        .section input[id="slide03"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(3) > label {
-            background: #999;
-        }
-        .size{
-            height: 900px;
-            width: 500px;
-            margin: auto;
-        }
-
-    </style>
     <script>
         $(document).ready(function(){
             show_comment()
@@ -374,7 +61,12 @@
                 }
             });
         }
-
+        function fn1(){
+            alert("눌러주셔서 감사합니다")
+        }
+        function fn2(){
+            window.scrollTo(0,0)
+        }
     </script>
 </head>
 <body>
@@ -397,7 +89,7 @@
         <div class="flex-item color-red">❤️이름: 김익현</div>
         <div class="flex-item color-red">🧡나이: 27</div>
         <div class="flex-item color-red">💛거주지: 세종시</div>
-        <div class="flex-item color-red">💚취미: 운동,게임,수다</div>
+        <div class="flex-item color-red">💚취미: 운동(헬스,배드민턴),게임,수다</div>
         <div class="flex-item color-red">💙하고싶은 말: 잘 부탁드립니다~</div>
     </div>
 </div>
@@ -434,7 +126,7 @@
         </svg>
         팀원들의 블로그 주소
     </ul>
-    <oi>👉 <a href="https://ikit.tistory.com/">IKIT</a></oi>
+    <oi>👉 <a class="link-color" href="https://ikit.tistory.com/">IKIT (익현 IT라는 의미)</a></oi>
 </div>
 <div class="size">
     <div class="section">
@@ -502,5 +194,6 @@
     <button onclick="save_comment()" type="button" class="btn btn-dark">방명록 남기기</button>
 </div>
 <div class="mycards" id="comment-list"></div>
+<div class="like"><button type="button" onclick="javascript:fn1();fn2();">❤</button></div>
 </body>
 </html>
