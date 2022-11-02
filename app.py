@@ -68,6 +68,7 @@ def post_seong_comment():
         'name': name_receive,
         'comment': comment_receive,
         'index' : index_receive,
+        'current_like' : 0,
     }
     db.seong.insert_one(doc)
     return jsonify({'msg': '댓글 작성 완료'})
@@ -85,14 +86,25 @@ def delete_seong_comment():
     db.seong.delete_one({"index" : index_receive})
     return jsonify({'msg' : '댓글 삭제 완료'})
 
+@app.route("/api/seongrock/comment/like", methods=["POST"])
+def plus_seong_comment_like():
+    
+    index_receive = request.form['target']
+    
+    find = db.seong.find_one({"index" : index_receive})
+    like = find['current_like']
+    new_like = like + 1
+    db.seong.update_one({'index': index_receive}, {'$set': {'current_like': new_like}})
 
-'''테스트 버전 실행할따마다 db비우기'''
+    return jsonify({'msg': '좋아요 완료!'})
+
+
+'''테스트 버전 실행할따마다 db비우기''''''
 def clear():
     db.seong.delete_many({})
     return
 
 clear()
-'''''''''''''''''''''
 성락 소개페이지 API 끝
 '''''''''''''''''''''
 
