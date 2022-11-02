@@ -60,7 +60,7 @@ def gwanho_cheer():
 성락 소개페이지 API 시작
 '''''''''''''''''''''
 @app.route("/api/seongrock/comment", methods=["POST"])
-def seong_comment_post():
+def post_seong_comment():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
     index_receive = request.form['index']
@@ -73,13 +73,13 @@ def seong_comment_post():
     return jsonify({'msg': '댓글 작성 완료'})
 
 @app.route("/api/seongrock/comment", methods=["GET"])
-def seong_get():
+def get_seong_comment():
     find = list(db.seong.find({}, {'_id': False}))
     print(find)
     return jsonify({'seongrock': find})
 
 @app.route("/api/seongrock/comment", methods=["DELETE"])
-def seong_delete_comment():
+def delete_seong_comment():
     index_receive = request.form['target']
     print(index_receive)
     db.seong.delete_one({"index" : index_receive})
