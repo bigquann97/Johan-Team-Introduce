@@ -56,15 +56,9 @@ def gwanho_cheer():
     db.gwanho.update_one({'count': count}, {'$set':{'count': count + 1}})
     return jsonify({'stats': 'ok'})
 
-
-
-
-
 '''''''''''''''''''''
 성락 소개페이지 API 시작
 '''''''''''''''''''''
-
-
 @app.route("/seongrock", methods=["POST"])
 def seong_comment_post():
     name_receive = request.form['name_give']
@@ -98,18 +92,15 @@ def clear():
     return
 
 clear()
-
 '''''''''''''''''''''
 성락 소개페이지 API 끝
 '''''''''''''''''''''
 
 
-
-
-
+'''''''세인영역'''''''''
 @app.route("/seinc", methods=["POST"])
 def sein_comment_post():
-    name_receive = request.form['name_give']
+    name_receive = request.form['id_give']
     comment_receive = request.form['comment_give']
     doc = {
         'name': name_receive,
@@ -122,6 +113,26 @@ def sein_comment_post():
 def sein_get():
     find = list(db.sein.find({}, {'_id': False}))
     return jsonify({'sein_comment': find})
+
+@app.route("/sein_like", methods=["POST"])
+def sein_like_post():
+    find = list(db.seinlike.find({},{',_id' : False}).sort('like', -1))
+
+    if not find:
+        db.seinlike.insert_one({'current_like' : 1})
+    else:
+        like = find[0]['current_like']
+        new_like = like + 1
+        db.seinlike.update_one({'current_like': like}, {'$set': {'current_like': new_like}})
+
+    return jsonify({'msg': '좋아요 완료!'})
+
+@app.route("/sein-like-api", methods=["GET"])
+def sein_like_get():
+    find = list(db.seinlike.find({},{',_id' : False}).sort('like', -1))
+    return jsonify({'sein_like_get' : find[0]['current_like']})
+'''''''세인 영역 끝'''''''''
+
 
 @app.route("/api/ikhyeon", methods=["POST"])
 def ikhyeon_post():

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href= "../static/kimjohan.ico" rel="shortcut icon" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -134,8 +133,8 @@
             text-align: center;
         }
 
-        .center_2 > span{
-            margin-top : 50px;
+        .center_2 > span {
+            margin-top: 50px;
             font-size: 15px;
             text-align: center;
             display: block;
@@ -150,7 +149,7 @@
             padding: 20px;
         }
 
-        .mypost > button {
+        .mypost > btn btn-dark {
             margin-top: 15px;
         }
 
@@ -159,6 +158,15 @@
             max-width: 930px;
             margin: 20px auto auto auto;
         }
+
+        .btn_post_icon {
+            border: 1px solid #cccccc;
+            margin: 30px auto auto 5px;
+            width: 35px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
     </style>
     <script>
         $(document).ready(function () {
@@ -172,10 +180,10 @@
             $.ajax({
                 type: 'POST',
                 url: '/seinc',
-                data: {name_give: userId, comment_give: comment},
+                data: { id_give: userId, comment_give: comment},
                 success: function (response) {
                     alert("응원 완료!")
-                    window.location.reload()
+
                 }
             })
         }
@@ -187,8 +195,6 @@
                 data: {},
                 success: function (response) {
                     let rows = response['sein_comment']
-
-                    console.log(rows)
 
                     for (let i = 0; i < rows.length; i++) {
                         let comment = rows[i]['comment']
@@ -212,6 +218,44 @@
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
+
+        /*좋아요 ++ */
+        function like() {
+            $.ajax({
+                type: 'POST',
+                url: '/sein_like',
+                data: {},
+                success: function (response) {
+                    alert("좋아요 완료!")
+                    show_like()
+
+                }
+            })
+        }
+        /*좋아요 조회*/
+        function show_like() {
+            $('#like_btn').empty()
+
+            $.ajax({
+                type: "GET",
+                url: "/sein-like-api",
+                data: {},
+                success: function (response) {
+                    let likes = response['sein_like_get']
+
+                    console.log(likes)
+                    let temp_like = `<button onclick="save_comment()" type="button" class="btn btn-dark">응원 남기기</button>
+                                        <button class="btn_post_icon" id="btn_post" onclick="like()" style="width : 50px" disabled>
+                                                <span className="ico_postbtn ico_like" style="font-size: 12px">♥ : ${likes}</span>
+                                        </button>
+                                        <span>&nbsp;&nbsp;※ 좋아요는 한번만 눌러주세요 ~:D</span>`
+
+
+                    $('#like_btn').append(temp_like)
+
+                }
+            });
+        }
     </script>
 
 </head>
@@ -258,17 +302,21 @@
         </div>
 
         <div class="mypost">
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-2">
                 <input type="text" class="form-control" id="name" placeholder="url">
                 <label for="floatingInput">닉네임</label>
             </div>
             <div class="form-floating">
                 <textarea class="form-control" placeholder="Leave a comment here" id="comment"
-                          style="height: 100px"></textarea>
+                          style="height: 100px;"></textarea>
                 <label for="floatingTextarea2">응원댓글</label>
             </div>
-            <button onclick="save_comment()" type="button" class="btn btn-dark">응원 남기기</button>
-
+            <div class="like_btn" id="like_btn">
+                <button onclick="save_comment()" type="button" class="btn btn-dark">응원 남기기</button>
+                <button class="btn_post_icon" id="btn_post" onclick="like()">
+                        <span className="ico_postbtn ico_like">♡</span>
+                </button>
+            </div>
         </div>
         <hr style="width : 1000px; margin : auto;">
         <p style="margin-left: 60px; margin-top : 20px;">#응원 메세지</p>
