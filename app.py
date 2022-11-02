@@ -150,6 +150,32 @@ def ikhyeon_get():
     ikhyeon_list = list(db.ikhyeon.find({}, {'_id': False}))
     return jsonify({'ikhyeon':ikhyeon_list})
 
+# 병두 시작######################
+
+@app.route("/api/byeongdoo", methods=["POST"])
+def byeongdoo_comment_post():
+    name_receive = request.form['name_give']
+    comment_receive = request.form['comment_give']
+    doc = {
+        'name': name_receive,
+        'comment': comment_receive,
+    }
+    db.byeongdoo.insert_one(doc)
+    return jsonify({'msg': '댓글 작성 완료!'})
+
+@app.route("/api/byeongdoo", methods=["GET"])
+def byeongdoo_get():
+    find = list(db.byeongdoo.find({}, {'_id': False}))
+    return jsonify({'byeongdoo': find})
+
+@app.route("/api/byeongdoo/like", methods=["POST"])
+def byeongdoo_cheer():
+    find = list(db.byeongdoo.find({}, {'_id': False}))
+    count = find[0]['current_like']
+    db.byeongdoo.update_one({'current_like': count}, {'$set':{'current_like': count + 1}})
+    return
+
+# 병두 끝 #######################
 '''
 @app.route("/gwanho-cheer", methods=["POST"])
 def gwanho_cheer():
