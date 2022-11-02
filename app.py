@@ -33,7 +33,7 @@ def seongrock():
 def gwanho():
     return render_template('5.html')
 
-@app.route("/gwanho", methods=["POST"])
+@app.route("/api/gwanho", methods=["POST"])
 def gwanho_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
@@ -44,12 +44,12 @@ def gwanho_comment_post():
     db.gwanho.insert_one(doc)
     return jsonify({'msg': '댓글 작성 완료!'})
 
-@app.route("/gwanho-api", methods=["GET"])
+@app.route("/api/gwanho", methods=["GET"])
 def gwanho_get():
     find = list(db.gwanho.find({}, {'_id': False}))
     return jsonify({'gwanho': find})
 
-@app.route("/gwanho-cheer", methods=["POST"])
+@app.route("/api/gwanho/like", methods=["POST"])
 def gwanho_cheer():
     find = list(db.gwanho.find({}, {'_id': False}))
     count = find[0]['count']
@@ -59,7 +59,7 @@ def gwanho_cheer():
 '''''''''''''''''''''
 성락 소개페이지 API 시작
 '''''''''''''''''''''
-@app.route("/seongrock", methods=["POST"])
+@app.route("/api/seongrock", methods=["POST"])
 def seong_comment_post():
     name_receive = request.form['name_give']
     comment_receive = request.form['comment_give']
@@ -72,13 +72,13 @@ def seong_comment_post():
     db.seong.insert_one(doc)
     return jsonify({'msg': '댓글 작성 완료'})
 
-@app.route("/seongrock-api", methods=["GET"])
+@app.route("/api/seongrock", methods=["GET"])
 def seong_get():
     find = list(db.seong.find({}, {'_id': False}))
     print(find)
     return jsonify({'seongrock': find})
 
-@app.route("/seongrock-comment", methods=["DELETE"])
+@app.route("/api/seongrock/comment", methods=["DELETE"])
 def seong_delete_comment():
     index_receive = request.form['target']
     print(index_receive)
@@ -98,7 +98,7 @@ clear()
 
 
 '''''''세인영역'''''''''
-@app.route("/seinc", methods=["POST"])
+@app.route("/api/sein", methods=["POST"])
 def sein_comment_post():
     name_receive = request.form['id_give']
     comment_receive = request.form['comment_give']
@@ -109,12 +109,12 @@ def sein_comment_post():
     db.sein.insert_one(doc)
     return jsonify({'msg': '댓글 작성 완료!'})
 
-@app.route("/sein-api", methods=["GET"])
+@app.route("/api/sein", methods=["GET"])
 def sein_get():
     find = list(db.sein.find({}, {'_id': False}))
     return jsonify({'sein_comment': find})
 
-@app.route("/sein_like", methods=["POST"])
+@app.route("/api/sein/like", methods=["POST"])
 def sein_like_post():
     find = list(db.seinlike.find({},{',_id' : False}).sort('like', -1))
 
@@ -127,7 +127,7 @@ def sein_like_post():
 
     return jsonify({'msg': '좋아요 완료!'})
 
-@app.route("/sein-like-api", methods=["GET"])
+@app.route("/api/sein/like", methods=["GET"])
 def sein_like_get():
     find = list(db.seinlike.find({},{',_id' : False}).sort('like', -1))
     return jsonify({'sein_like_get' : find[0]['current_like']})

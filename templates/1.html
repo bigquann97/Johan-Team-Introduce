@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href= "../static/kimjohan.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="../static/kimjohan.ico" rel="shortcut icon" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -42,13 +42,13 @@
         justify-content: center;
         border-radius: 10px;
         margin: 30px auto;
-        padding:0px;
     }
 
     .navigation ul {
         display: flex;
         width: 500px;
-        margin:auto;
+        padding: 10px;
+        margin: 0px;
     }
 
     .navigation ul li {
@@ -63,8 +63,9 @@
         position: relative;
         display: flex;
         align-items: center;
-        flex-direction: row;
-        width: 75px;
+        justify-items: center;
+        flex-direction: column;
+        width: 70px;
         text-align: center;
         font-weight: 500;
     }
@@ -83,26 +84,45 @@
         transform: translateX(-35px);
     }
 
-    .navigation ul li a .oldtext {
+    .navigation ul li a .title234 {
         position: absolute;
         color: #222327;
         font-weight: 400;
         font-size: 0.8em;
         letter-spacing: 0.05em;
         transition: 0.5s;
-        opacity: 1;
-        transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(25px);
         /*margin-top:50px;*/
 
     }
 
-    .navigation ul li:hover a .oldtext {
+    .navigation ul li:hover a .title234 {
         opacity: 1; /*투명도*/
-        transform: translate(10px, -10px); /*움직이기*/
+        transform: translate(10px, 15px); /*움직이기*/
 
     }
 
-    .navigation ul li a .text2 {
+    .navigation ul li a .text1 {
+        position: absolute;
+        color: #222327;
+        font-weight: 400;
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        transform: translateY(15px);
+        /*margin-top:50px;*/
+
+    }
+
+    .navigation ul li:hover a .text1 {
+        opacity: 1; /*투명도*/
+        transform: translate(10px, 15px); /*움직이기*/
+
+    }
+
+    .navigation ul li a .text678 {
         position: absolute;
         color: #222327;
         font-weight: 400;
@@ -113,13 +133,30 @@
         transform: translateY(20px);
     }
 
-    .navigation ul li:hover a .text2 {
+    .navigation ul li:hover a .text678 {
         opacity: 1;
-        transform: translate(10px, 10px);
+        transform: translate(20px, 20px);
 
     }
 
-    .navigation ul li a .text3 {
+    .navigation ul li a .text234 {
+        position: absolute;
+        color: #222327;
+        font-weight: 400;
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    .navigation ul li:hover a .text234 {
+        opacity: 1;
+        transform: translate(10px, 40px);
+
+    }
+
+    .navigation ul li a .text5 {
         position: absolute;
         color: #222327;
         font-weight: 400;
@@ -130,13 +167,13 @@
         transform: translateY(20px);
     }
 
-    .navigation ul li:hover a .text3 {
+    .navigation ul li:hover a .text5 {
         opacity: 1;
-        transform: translate(10px, 15px);
+        transform: translate(10px, 35px);
 
     }
 
-    .navigation ul li a .blogtext {
+    .navigation ul li a .title678 {
         position: absolute;
         color: #222327;
         font-weight: 400;
@@ -147,12 +184,22 @@
         transform: translateY(20px);
     }
 
-    .navigation ul li:hover a .blogtext {
+    .navigation ul li:hover a .title678 {
         opacity: 1;
-        transform: translate(10px, -20px);
+        transform: translate(15px, 10px);
 
     }
 
+    .navigation ul li a .title5 {
+        position: absolute;
+        color: #222327;
+        font-weight: 400;
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+        transition: 0.5s;
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
     .me {
         width: 200px;
@@ -306,12 +353,20 @@
 <div class="navigation">
     <ul>
         <li class="list">
+            <a href="index.html">
+                <span class="icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                </span>
+                <span class="text1">Go To Home</span>
+            </a>
+        </li>
+        <li class="list">
             <a href="#">
                 <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
                 </span>
-                <span class="oldtext">Name</span>
-                <span class="text2">한병두</span>
+                <span class="title234">Name</span>
+                <span class="text234">한병두</span>
             </a>
         </li>
         <li class="list">
@@ -319,8 +374,8 @@
                 <span class="icon">
                     <ion-icon name="help-outline"></ion-icon>
                 </span>
-                <span class="oldtext">Age</span>
-                <span class="text2">29</span>
+                <span class="title234">Age</span>
+                <span class="text234">29</span>
             </a>
         </li>
         <li class="list">
@@ -328,26 +383,26 @@
                 <span class="icon">
                     <ion-icon name="bulb-outline"></ion-icon>
                 </span>
-                <span class="text">MBTI</span>
-                <span class="text2">ENFJ</span>
+                <span class="title234">MBTI</span>
+                <span class="text234">ENFJ</span>
             </a>
         </li>
-        <li class="list">
-            <a href="#">
-                <span class="icon">
-<ion-icon name="construct-outline"></ion-icon>
-                </span>
-                <span class="blogtext">Cowork Type</span>
-                <span class="text3">"오히려 좋아"</span>
-            </a>
-        </li>
+        <!--?        <li class="list">-->
+        <!--?            <a href="#">-->
+        <!--?                <span class="icon">-->
+        <!--?<ion-icon name="construct-outline"></ion-icon>-->
+        <!--?                </span>-->
+        <!--?                <span class="title5">Cowork Type</span>-->
+        <!--?                <span class="text5">"오히려 좋아"</span>-->
+        <!--?            </a>-->
+        <!--?        </li>-->
         <li class="list">
             <a href="https://velog.io/@quden04" , target="_blank">
                 <span class="icon">
 <ion-icon name="book-outline"></ion-icon>
                 </span>
-                <span class="blogtext">Blog</span>
-                <span class="text2">Click to Velog</span>
+                <!--?                <span class="title678">Blog</span>-->
+                <span class="text678">Click to Velog</span>
             </a>
         </li>
         <li class="list">
@@ -355,8 +410,8 @@
                 <span class="icon">
                     <ion-icon name="logo-github"></ion-icon>
                 </span>
-                <span class="blogtext">Github</span>
-                <span class="text2">Click to Github</span>
+                <!--?                <span class="title678">Github</span>-->
+                <span class="text678">Click to Github</span>
             </a>
         </li>
         <li class="list">
@@ -364,8 +419,8 @@
                 <span class="icon">
                     <ion-icon name="logo-instagram"></ion-icon>
                 </span>
-                <span class="blogtext">Instagram</span>
-                <span class="text2">Click to Instagram</span>
+                <!--?                <span class="title678">Instagram</span>-->
+                <span class="text678">Click to Instagram</span>
             </a>
         </li>
     </ul>
@@ -377,20 +432,18 @@
     <h5>"퇴사해서 해맑은 나..!"</h5>
 </div>
 <div class="whoami">
-    블라블라
+
 </div>
 <div class="like-box">
     <ul>
         <li class="list">
-            <a href="#a" onclick='addlike()'>
+            <a href="#a" onclick="addlike()">
                 <span class="icon">
                     <ion-icon name="heart-outline"></ion-icon>
                 </span>
-
             </a>
-
         </li>
-        <span id="result">+0</span>
+        <span id="result">0</span>
     </ul>
 </div>
 <div class="mypost">
@@ -436,18 +489,19 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         show_comment();
     });
-    function show_comment(){
+
+    function show_comment() {
         $('#comment-list').empty()
         $.ajax({
             type: "GET",
             url: "/byeongdoo",
-            data:{},
-            success:function (response){
+            data: {},
+            success: function (response) {
                 let rows = response['comments']
-                for (let i = 0; i < rows.length; i++){
+                for (let i = 0; i < rows.length; i++) {
                     let name = rows[i]['name']
                     let comment = rows[i]['comment']
 
@@ -466,11 +520,24 @@
     }
 
     function addLike() {
+        let byeongdooLike = $('#result').val()
+
         $.ajax({
             type: 'POST',
             url: '/byeongdoo-cheer',
-            data: {},
+            data: {'byeongdooLike_give':byeongdooLike},
             success: function (response) {
+                window.location.reload()
+            }
+        });
+    }
+
+    function getLike() {
+        $.ajax({
+            type: 'GET',
+            url: '/byengdoo-cheer',
+            data: {},
+            success:function(reponse) {
                 window.location.reload()
             }
         });
