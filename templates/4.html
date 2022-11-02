@@ -36,14 +36,14 @@
             margin: 20px auto 20px auto;
         }
         .header_hr_top {
-            width: 100% ;
-            max-width: 500px;
-            margin: 20px auto 20px auto;
+            margin-left: 10%;
+            width: 80%;
+            border: solid silver 1px;
         }
         .header_hr_bottom {
-            width: 100%;
-            max-width: 500px;
-            margin: 20px auto 20px auto;
+            margin-left: 10%;
+            width: 80%;
+            margin-top: 55px;
             border: solid silver 1px;
         }
         .header_kim {
@@ -176,7 +176,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '//api/seongrock/comment',
+                url: '/api/seongrock/comment',
                 data: { name_give:name, comment_give: comment, index : index_max+1,},
             });
         }
