@@ -25,7 +25,7 @@
         function listing() {
                 $.ajax({
                     type: 'GET',
-                    url: '/gwanho-api',
+                    url: '/api/gwanho',
                     data: {},
                     success: function (response) {
                         let gwanho = response['gwanho']
@@ -52,7 +52,7 @@
         function cheer() {
             $.ajax({
                 type: 'POST',
-                url: '/gwanho-cheer',
+                url: '/api/gwanho/like',
                 data: {},
                 success: function (response) {
                     window.location.reload()
@@ -66,7 +66,7 @@
             let comment = $('#comment').val()
             $.ajax({
                 type: 'POST',
-                url: '/gwanho',
+                url: '/api/gwanho',
                 data: { name_give:name, comment_give: comment },
                 success: function (response) {
                     alert('댓글을 남겨주셔서 감사합니다!')
