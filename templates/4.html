@@ -116,6 +116,22 @@
             width: 95%;
             max-width: 500px;
         }
+        .btn_post_icon {
+            margin-top: 15px;
+            border: 1px solid #cccccc;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+        }
+        .like{
+            margin-top: 15px;
+            border: 0px solid #ffffff;
+            background-color:transparent;
+            width: 100px;
+            height: 40px;
+            border-radius: 0px;
+            text-align: left;
+        }
     </style>
 
 
@@ -148,15 +164,24 @@
                             let name = seongrock[i]['name']
                             let comment = seongrock[i]['comment']
                             let index = parseInt(seongrock[i]['index'])
+                            let current_like = parseInt(seongrock[i]['current_like'])
+                            if(current_like == NaN)
+                                current_like = 0;
                             if(index_max < index)
                                 index_max = index;
                             
-                            let temp_html = `<div class="card">
+                            let temp_html = ` <div class="card">
                                                 <div class="card-body">
                                                     <blockquote class="blockquote mb-0">
                                                         <p>${comment}</p>
                                                         <footer class="blockquote-footer">${name}</footer>
-                                                        <button onclick="delete_comment(this); window.location.reload();" type="button" class="btn btn-dark" value="${index}">삭제</button>
+                                                        <div text-align="center">
+                                                            <button onclick="delete_comment(this); window.location.reload();" type="button" class="btn btn-dark" value="${index}">삭제</button>                                                            
+                                                            <button class="btn_post_icon" id="btn_post" onclick="add_comment_like(this); window.location.reload();" value="${index}">
+                                                                <span className="ico_postbtn ico_like">♡</span>
+                                                            </button>
+                                                            <button class="like" >${current_like}</button>
+                                                        </div>
                                                     </blockquote>
                                                 </div>
                                             </div>`
@@ -190,6 +215,17 @@
                 type: 'DELETE',
                 url: '/api/seongrock/comment',
                 data: { target : target },
+            });
+        }
+
+        function add_comment_like(index) {
+            
+            let target = parseInt(index.value);
+
+            $.ajax({
+                type: 'POST',
+                url: '/api/seongrock/comment/like',
+                data: { target : target},
             });
         }
 
