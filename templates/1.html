@@ -497,7 +497,7 @@
         $('#comment-list').empty()
         $.ajax({
             type: "GET",
-            url: "/byeongdoo",
+            url: "/api/byeongdoo",
             data: {},
             success: function (response) {
                 let rows = response['comments']
@@ -524,7 +524,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/byeongdoo-cheer',
+            url: '/api/byeongdoo/like',
             data: {'byeongdooLike_give':byeongdooLike},
             success: function (response) {
                 window.location.reload()
@@ -535,7 +535,7 @@
     function getLike() {
         $.ajax({
             type: 'GET',
-            url: '/byengdoo-cheer',
+            url: '/api/byengdoo/like',
             data: {},
             success:function(reponse) {
                 window.location.reload()
@@ -549,7 +549,7 @@
 
         $.ajax({
             type: "POST",
-            url: "/byeongdoo",
+            url: "/api/byeongdoo",
             data: {'name_give': name, 'comment_give': comment},
             success: function (response) {
                 alert(response["msg"])
