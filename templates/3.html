@@ -143,7 +143,7 @@
         .mypost {
             width: 95%;
             max-width: 900px;
-            margin: 80px auto 50px 50px;
+            margin: 10px auto 50px 50px;
 
             box-shadow: 0px 0px 3px 0px black;
             padding: 20px;
@@ -166,7 +166,18 @@
             height: 30px;
             border-radius: 5px;
         }
-
+        .fold{
+            width : 600px;
+            height: 30px;
+            margin-top : 20px;
+            margin-left: 350px;
+        }
+        .fold > button{
+            float: right;
+            border-radius: 3px;
+            font-weight: bolder;
+            border: 1px solid #999999;
+        }
     </style>
     <script>
         $(document).ready(function () {
@@ -183,7 +194,7 @@
                 data: { id_give: userId, comment_give: comment},
                 success: function (response) {
                     alert("응원 완료!")
-
+                    window.location.reload()
                 }
             })
         }
@@ -226,7 +237,7 @@
                 url: '/sein_like',
                 data: {},
                 success: function (response) {
-                    alert("좋아요 완료!")
+                    alert("좋아요 눌러주셔서 감사합니다:)")
                     show_like()
 
                 }
@@ -255,6 +266,16 @@
 
                 }
             });
+        }
+
+        function fold(){
+            let status = $('#mypost').css('display');
+
+            if(status == 'block'){
+                $('#mypost').hide()
+            }else{
+                $('#mypost').show()
+            }
         }
     </script>
 
@@ -301,7 +322,12 @@
             </p>
         </div>
 
-        <div class="mypost">
+
+        <div class="fold">
+            <button onclick="fold()">+</button>
+        </div>
+
+        <div class="mypost" id="mypost">
             <div class="form-floating mb-2">
                 <input type="text" class="form-control" id="name" placeholder="url">
                 <label for="floatingInput">닉네임</label>
@@ -318,7 +344,7 @@
                 </button>
             </div>
         </div>
-        <hr style="width : 1000px; margin : auto;">
+        <hr style="width : 1000px; margin : auto; border : 1px solid darkgrey">
         <p style="margin-left: 60px; margin-top : 20px;">#응원 메세지</p>
 
         <div class="mycards" id="comment-list">
