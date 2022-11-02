@@ -146,7 +146,7 @@
         function listing() {
                 $.ajax({
                     type: 'GET',
-                    url: '/seongrock-api',
+                    url: '/api/seongrock/comment',
                     data: {},
                     success: function (response) {
                         let seongrock = response['seongrock']
@@ -192,7 +192,7 @@
             let comment = $('#comment').val()
             $.ajax({
                 type: 'POST',
-                url: '/seongrock',
+                url: '//api/seongrock/comment',
                 data: { name_give:name, comment_give: comment, index : index_max+1,},
             });
         }
@@ -202,7 +202,7 @@
             console.log(target);
             $.ajax({
                 type: 'DELETE',
-                url: '/seongrock-comment',
+                url: '/api/seongrock/comment',
                 data: { target : target },
             });
         }
