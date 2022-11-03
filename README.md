@@ -6,6 +6,8 @@
 
 ### 02. 프로젝트 설명
 
+- 김관호, 김익현, 조성락, 한병두, 한세인의 성을 딴 '김조한' 조의 팀 소개 페이지
+- 프론트엔드, 백엔드, 서버, DB 구축을 통해 웹 개발의 이해 목표
 
 
 ### 03. 팀원 소개 및 역할
@@ -36,16 +38,16 @@
 
 ### 05. 구현 API
 
-| URL                     | Method | Function    | Request | Response         |
-|-------------------------|--------|-------------|---------|------------------|
-| /                       | GET    | 메인 페이지      | -       | index.html       |
-| /teaminto               | GET    | 팀원 리스트      | -       | teaminto.html    |
-| /{member-name}          | GET    | 팀원 별 소개 페이지 | -       | 팀원 별 소개 페이지.html |
-| /api/{member-name}      | GET    | 내용 10       | 내용 11   | 내용 12            |
-| /api/{member-name}      | POST   | 내용 10       | 내용 11   | 내용 12            |
-| /api/{member-name}/like | GET    | 내용 10       | 내용 11   | 내용 12            |
-| /api/{member-name}/like | POST   | 내용 10       | 내용 11   | 내용 12            |
-| /api/music              | GET    | 내용 10       | 내용 11   | 내용 12            |
+| URL                     | Method | Function    | Request                                                 | Response                                                |
+|-------------------------|--------|-------------|---------------------------------------------------------|---------------------------------------------------------|
+| /                       | GET    | 메인 페이지      | -                                                       | index.html                                              |
+| /teaminto               | GET    | 팀원 리스트      | -                                                       | teaminto.html                                           |
+| /{member-name}          | GET    | 팀원 별 소개 페이지 | -                                                       | 팀원 별 소개 페이지.html                                        |
+| /api/{member-name}      | GET    | 댓글 가져오기     | -                                                       | {<br/>"name" : "홍길동",<br/>"comment": "들렀다가요"<br/>}, ... |
+| /api/{member-name}      | POST   | 댓글 등록       | {<br/>"name" : "홍길동",<br/>"comment": "들렀다가요"<br/>}, ... | -                                                       |
+| /api/{member-name}/like | GET    | 좋아요 가져오기    | -                                                       | { "like" : 0 }                                          |
+| /api/{member-name}/like | POST   | 좋아요 등록      | -                                                       | -                                                       |
+| /api/music              | GET    | 김조한 음악 크롤링  | -                                                       | -                                                       |
 
 
 ### 06. 데이터베이스 구조
