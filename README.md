@@ -38,16 +38,16 @@
 
 ### 05. 구현 API
 
-| URL                     | Method | Function    | Request                                            | Response                                                |
-|-------------------------|--------|-------------|----------------------------------------------------|---------------------------------------------------------|
-| /                       | GET    | 메인 페이지      | -                                                  | index.html                                              |
-| /teaminto               | GET    | 팀원 리스트      | -                                                  | teaminto.html                                           |
-| /{member-name}          | GET    | 팀원 별 소개 페이지 | -                                                  | 팀원 별 소개 페이지.html                                        |
-| /api/{member-name}      | GET    | 댓글 가져오기     | -                                                  | {<br/>"name" : "홍길동",<br/>"comment": "들렀다가요"<br/>}, ... |
-| /api/{member-name}      | POST   | 댓글 등록       | {<br/>"name" : "홍길동",<br/>"comment": "들렀다가요"<br/>} | -                                                       |
-| /api/{member-name}/like | GET    | 좋아요 가져오기    | -                                                  | { "like" : 0 }                                          |
-| /api/{member-name}/like | POST   | 좋아요 등록      | -                                                  | -                                                       |
-| /api/music              | GET    | 김조한 음악 크롤링  | -                                                  | -                                                       |
+| URL                     | Method | Function    | Request                                            | Response                                                                             |
+|-------------------------|--------|-------------|----------------------------------------------------|--------------------------------------------------------------------------------------|
+| /                       | GET    | 메인 페이지      | -                                                  | index.html                                                                           |
+| /teaminto               | GET    | 팀원 리스트      | -                                                  | teaminto.html                                                                        |
+| /{member-name}          | GET    | 팀원 별 소개 페이지 | -                                                  | 팀원 별 소개 페이지.html                                                                     |
+| /api/{member-name}      | GET    | 댓글 가져오기     | -                                                  | {<br/>"name" : "홍길동",<br/>"comment": "들렀다가요"<br/>}, ...                              |
+| /api/{member-name}      | POST   | 댓글 등록       | {<br/>"name" : "홍길동",<br/>"comment": "들렀다가요"<br/>} | -                                                                                    |
+| /api/{member-name}/like | GET    | 좋아요 가져오기    | -                                                  | { "like" : 0 }                                                                       |
+| /api/{member-name}/like | POST   | 좋아요 등록      | -                                                  | -                                                                                    |
+| /api/music              | GET    | 김조한 음악 크롤링  | -                                                  | {<br/>"image": "imageLink",<br/>"title": "titleName",<br/>"album": "albumName"<br/>} |
 
 
 ### 06. 데이터베이스 구조
