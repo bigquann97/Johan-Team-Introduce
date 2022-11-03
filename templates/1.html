@@ -49,6 +49,7 @@
                 url: '/api/byeongdoo/like',
                 data: {},
                 success: function (response) {
+
                     window.location.reload()
                 }
             });
@@ -65,8 +66,14 @@
                     let byeongdoo = response['byeongdoolike']
                     // let count = byeongdoo['like_count']
                     // console.log(count)
-                    console.log(byeongdoo)
-                    // $('#like-result').text(count)
+                    //console.log(byeongdoo)
+                    let temp_html = `<button class="likebutton" onclick="addLike()">
+                                        <span class="icon">
+                                            <ion-icon name="heart-outline">${byeongdoo}</ion-icon>
+                                        </span>
+                                    </button>`
+
+                    $('#list').append(temp_html)
                 }
             });
 

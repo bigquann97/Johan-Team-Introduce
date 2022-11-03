@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
+import requests
+from bs4 import BeautifulSoup
 from pymongo import MongoClient
 import certifi
 
@@ -11,6 +13,30 @@ client = MongoClient('mongodb+srv://test:sparta@sparta.t6tojb3.mongodb.net/spart
 
 db = client.dbsparta
 
+
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
+data = requests.get('https://www.genie.co.kr/detail/artistSong?xxnm=14945151', headers=headers)
+
+soup = BeautifulSoup(data.text, 'html.parser')
+
+musics = soup.select('#songlist-box > div.music-list-wrap > table > tbody > tr')
+
+for music in musics:
+        image = music.select_one('td > a > img')['src']
+        title = music.select_one('td.info > a.title.ellipsis')['title']
+        album = music.select_one('td.info > a.albumtitle.ellipsis').text
+
+        doc = {
+            'image': image,
+            'title': title,
+            'album': album
+        }
+        db.musics.insert_one(doc)
+
+@app.route("/api/music", methods=["GET"])
+def music_get():
+    find = list(db.musics.find({}, {'_id': False}))
+    return jsonify({'musics': find})
 
 @app.route('/')
 def home():
