@@ -4,11 +4,14 @@
 
 - 코딩잘하는 김조한
 
+---
+
 ### 02. 프로젝트 설명
 
 - 김관호, 김익현, 조성락, 한병두, 한세인의 성을 딴 '김조한' 조의 팀 소개 페이지
 - 프론트엔드, 백엔드, 서버, DB 구축을 통해 웹 개발의 이해 목표
 
+---
 
 ### 03. 팀원 소개 및 역할
 | 이름                      | 역할               | 
@@ -18,6 +21,8 @@
 | 김세인                     | 팀원 - 프론트/백엔드     |
 | 조성락                     | 팀원 - 프론트/백엔드    |
 | 김관호                     | 팀원 - 프론트/백엔드/서버구축 |
+
+---
 
 ### 04. 사용 기술
 
@@ -35,6 +40,7 @@
 <img src="https://img.shields.io/badge/Amazone EC2-FF9900?style=for-the-badge&logo=amazon&logoColor=white">
 </div>
 
+---
 
 ### 05. 구현 API
 
@@ -49,6 +55,7 @@
 | /api/{member-name}/like | POST   | 좋아요 등록      | -                                                  | -                                                                                    |
 | /api/music              | GET    | 김조한 음악 크롤링  | -                                                  | {<br/>"image": "imageLink",<br/>"title": "titleName",<br/>"album": "albumName"<br/>} |
 
+---
 
 ### 06. 데이터베이스 구조
 
@@ -65,6 +72,8 @@
 #### - Documents
 - {memberName} : [{ "name" : (String), "comment" : (String) }, ...]
 - {memberName + "like"} : { "count" : (Int) }
+
+--- 
 
 ### 07. 관련 링크
 <a href="http://43.201.105.241"> 사이트 접속 </a> <br>
