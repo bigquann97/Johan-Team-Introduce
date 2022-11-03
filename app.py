@@ -258,7 +258,7 @@ def byeongdoo_add_like():
 @app.route("/api/byeongdoo/like", methods=["GET"])
 def byeongdoo_get_like():
     find = list(db.byeongdoolike.find({}, {',_id': False}).sort('like', -1))
-    print(find)
+
     like = find[0]['like_count']
 
     return jsonify({'byeongdoolike': like})
