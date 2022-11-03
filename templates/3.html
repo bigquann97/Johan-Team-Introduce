@@ -156,7 +156,7 @@
         .mycards {
             width: 95%;
             max-width: 930px;
-            margin: 20px auto auto auto;
+            margin: 20px auto auto 35px;
         }
 
         .btn_post_icon {
@@ -214,7 +214,7 @@
 
                         let temp_html = `<div class="card" style="width : 900px; box-shadow: 2px 2px 2px 2px darkgrey; margin: 20px auto 0px 20px;">
                                             <div class="card-body">
-                                                <blockquote class="blockquote mb-0"  style="display: inline-block">
+                                                <blockquote class="blockquote mb-0">
                                                 <p>${comment}</p>
                                                 <footer class="blockquote-footer">${userId}</footer>
                                                 </blockquote>
@@ -255,6 +255,7 @@
                 success: function (response) {
                     let likes = response['sein_like_get']
 
+                    console.log(likes)
                     let temp_like = `<button onclick="save_comment()" type="button" class="btn btn-dark">응원 남기기</button>
                                         <button class="btn_post_icon" id="btn_post" onclick="like()" style="width : 50px" disabled>
                                                 <span className="ico_postbtn ico_like" style="font-size: 12px">♥ : ${likes}</span>
