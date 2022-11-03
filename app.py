@@ -72,6 +72,10 @@ def seongrock():
 def gwanho():
     return render_template('5.html')
 
+@app.route('/kimjohan')
+def kimjohan():
+    return render_template('6.html')
+
 
 @app.route("/api/gwanho", methods=["POST"])
 def gwanho_comment_post():
