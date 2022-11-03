@@ -76,5 +76,5 @@
 --- 
 
 ### 07. 관련 링크
-<a href="http://43.201.105.241"> 사이트 접속 </a> <br>
+<a href="http://http://dewdew.shop/"> 사이트 접속 </a> <br>
 <a href="https://giant-honeycrisp-305.notion.site/6901a11fdc3d45349e38f0171c85dacb"> 개발 일지 노션 </a>
